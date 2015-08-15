@@ -13,6 +13,7 @@ get '/' do
       r.Message ticker["JPY"].
     else
       r.Message "Please just send the 3 letter currency code."
+    end
   end
   twiml.text
 end
