@@ -1,3 +1,7 @@
+require 'twilio-ruby'
+require 'sinatra'
+require 'blockchain'
+
 get '/' do
   ticker = Blockchain::get_ticker()
   twiml = Twilio::TwiML::Response.new do |r|
