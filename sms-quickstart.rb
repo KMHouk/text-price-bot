@@ -20,5 +20,6 @@ get '/' do
   else
     r.Message "Error has occurred."
   end
+  end
   twiml.text
 end
