@@ -5,8 +5,14 @@ require 'blockchain'
 get '/' do
   ticker = Blockchain::get_ticker()
   twiml = Twilio::TwiML::Response.new do |r|
-    r.Message ticker[params[:Body]].last
-    # r.Message "Hey Monkey. Thanks for the message!"
+    text = params[:Body]
+    case text
+    when "USD" || "usd"
+      r.Message ticker["USD"].last
+    when "JPY" || "jpy"
+      r.Message ticker["JPY"].
+    else
+      r.Message "Please just send the 3 letter currency code."
   end
   twiml.text
 end
