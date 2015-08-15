@@ -7,10 +7,10 @@ get '/' do
   twiml = Twilio::TwiML::Response.new do |r|
     text = params[:Body]
     case text
-    when "USD" || "usd"
+    when "USD".casecmp(text) == 0
       r.Message ticker["USD"].last
-    when "JPY" || "jpy"
-      r.Message ticker["JPY"].
+    when "JPY".casecmp(text) == 0
+      r.Message ticker["JPY"].last
     else
       r.Message "Please just send the 3 letter currency code."
     end
