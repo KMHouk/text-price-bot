@@ -16,7 +16,7 @@ get '/' do
       r.Message "Please text the 3 letter currency code for the latest price (ex: 'usd') OR text the currency value, space, 3 letter currency code (ex: '100 usd')"
     end
   rescue
-    r.Message "Unrecognized input caused exception."
+    r.Message "Please text the 3 letter currency code for the latest price (ex: 'usd') OR text the currency value, space, 3 letter currency code (ex: '100 usd')"
   end
   end
   twiml.text
