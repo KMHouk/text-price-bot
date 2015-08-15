@@ -13,6 +13,7 @@ get '/' do
       r.Message "#{Blockchain::to_btc(text[space+1..-1)], text[0..space-1])}"
     else
       r.Message "Error"
+    end
   end
   twiml.text
 end
