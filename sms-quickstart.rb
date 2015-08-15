@@ -17,8 +17,6 @@ get '/' do
     end
   rescue
     r.Message "Unrecognized input caused exception."
-  else
-    r.Message "Error has occurred."
   end
   end
   twiml.text
