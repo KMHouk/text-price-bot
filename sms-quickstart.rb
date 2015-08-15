@@ -10,7 +10,7 @@ get '/' do
       r.Message "#{ticker[text].symbol}#{ticker[text].last}"
     elsif text.match(" ")
       space = text.index(" ")
-      r.Message "#{Blockchain::to_btc(text[space+1..-1)], text[0..space-1])}"
+      r.Message "#{Blockchain::to_btc(text[space+1..-1], text[0..space-1])}"
     else
       r.Message "Error"
     end
