@@ -8,7 +8,7 @@ get '/' do
     begin
     text = params[:Body].upcase
     if text.length == 3
-      r.Message "#{ticker[text].symbol}#{ticker[text].last}"
+      r.Message "#{ticker[text].last} #{text}"
     elsif text.match(" ")
       space = text.index(" ")
       r.Message "#{Blockchain::to_btc(text[space+1..-1], text[0..space-1])} BTC"
